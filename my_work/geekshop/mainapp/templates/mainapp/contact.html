@@ -1,17 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'mainapp/base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-</head>
-
-<body>
-    <div class="conteiner">
-        <div class="slider-contact padding-site clearfix">
+{% block conteiner %}
+<div class="slider-contact padding-site clearfix">
             <div class="header clearfix">
                 <a href="#"><img src="/static/img/logo.svg" alt="logo"></a>
                  <ul class="menu clearfix">
@@ -26,7 +16,7 @@
                 <div class="contact-us">Наши контакты</div>
             </div>
         </div>
-        <div class="row main-contact"  id="contact-1">
+<div class="row main-contact"  id="contact-1">
             <div class="col-4 col-contact">
                 <div class="icomoon"><img src="/static/img/icomoon.png" alt="icomoon"></div>
                 <div class="icomoon-h3">Санкт-Петербург</div>
@@ -40,22 +30,4 @@
 
             </div>
 
-    </div>
-    
-    <div class="clr"></div>
-    
-    <div class="center">
-    <div class="footer">
-
-        <div class="row rstr-3" id="rstr-id-3">
-            <div class="col-4 str-3 rtd-1">© Copyright - BOOKSHOP 2020. All Rights Reserved.</div>
-            <div class="col-4 rtd-2"><img class="csite" src="/static/img/social-links.png" alt="icon"></div>
-            <div class="col-4 str-3 rtd-2">Terms & Conditions / Privacy policy & Cookies</div>
-        </div>
-    </div>
-    </div>
-
-    </div>
-
-</body>
-</html>
+{% endblock %}

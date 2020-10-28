@@ -1,109 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'mainapp/base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="/static/css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css"> </head>
+{% block conteiner %}
 
-<body>
-    <div class="conteiner">
-        <div class="slider-contact padding-site clearfix">
-            <div class="header clearfix">
-                <a href="#"><img src="/static/img/logo.svg" alt="logo"></a>
-                <ul class="menu clearfix">
-                    <li class="menu-list"><a href="/" class="menu-link">ГЛАВНАЯ</a></li>
-                    <li class="menu-list"><a href="/product/" class="menu-link menu-link-active">КАТАЛОГ</a></li>
-                    <li class="menu-list"><a href="#" class="menu-link">ЛИЧНЫЙ КАБИНЕТ</a></li>
-                    <li class="menu-list"><a href="/contact/" class="menu-link">КОНТАКТЫ</a></li>
-                    <li class="menu-list">
-                        <a href="#" class="menu-link menu-search">поиск</a>
-                    </li>
-                </ul>
-                <div class="contact-us-product">Наши книги</div>
-            </div>
-        </div>
-        <div class="product-menu">
-            <ul class="product-menu-ul">
-                <li class="product-menu-lict-active"><a href="product-deails.html" class="product-a">ВСЕ</a></li>
-                <li class="product-menu-lict"><a href="#" class="product-a">РОМАНЫ</a></li>
-                <li class="product-menu-lict"><a href="#" class="product-a">ФАНТАСТИКА</a></li>
-                <li class="product-menu-lict"><a href="#" class="product-a">ФЭНТАЗИ</a></li>
-                <li class="product-menu-lict"><a href="#" class="product-a">НАУЧНАЯ ЛИТЕРАТУРА</a></li>
-                <li class="product-menu-lict"><a href="#" class="product-a">КЛАССИКА</a></li>
-            </ul>
-        </div>
-        <div class="product-block">
-            <div class="row product-catalog">
-                <col-4 class="product-catalog-col">
-                    <a href="#"><img src="/static/img/product-11.jpg" alt="foto"></a>
-                </col-4>
-                <col-4 class="product-catalog-col">
-                    <a href="#"><img src="/static/img/product-21.jpg" alt="foto"></a>
-                </col-4>
-                <col-4 class="product-catalog-col">
-                    <a href="#"><img src="/static/img/product-31.jpg" alt="foto"></a>
-                </col-4>
-            </div>
-            <div class="row product-catalog">
-                <col-4 class="product-catalog-col">
-                    <a href="#"><img src="/static/img/product-41.jpg" alt="foto"></a>
-                </col-4>
-                <col-4 class="product-catalog-col">
-                    <a href="#"><img src="/static/img/product-5.jpg" alt="foto"></a>
-                </col-4>
-                <col-4 class="product-catalog-col">
-                    <a href="#"><img src="/static/img/product-6.jpg" alt="foto"></a>
-                </col-4>
-            </div>
-            <div class="row product-catalog">
-                <col-4 class="product-catalog-col">
-                    <a href="#"><img src="/static/img/product-11.jpg" alt="foto"></a>
-                </col-4>
-                <col-4 class="product-catalog-col">
-                    <a href="#"><img src="/static/img/product-21.jpg" alt="foto"></a>
-                </col-4>
-                <col-4 class="product-catalog-col">
-                    <a href="#"><img src="/static/img/product-31.jpg" alt="foto"></a>
-                </col-4>
-            </div>
-            <div class="row product-catalog">
-                <col-4 class="product-catalog-col">
-                    <a href="#"><img src="/static/img/product-41.jpg" alt="foto"></a>
-                </col-4>
-                <col-4 class="product-catalog-col">
-                    <a href="#"><img src="/static/img/product-5.jpg" alt="foto"></a>
-                </col-4>
-                <col-4 class="product-catalog-col">
-                    <a href="#"><img src="/static/img/product-6.jpg" alt="foto"></a>
-                </col-4>
-            </div>
-        </div>
-        <div class="reset"> <img src="/static/img/reset.png" alt="icon"> </div>
-       <div class="exclusive clearfix">
-            <div class="left-exclusive">
-                <p class="p-exclusive margin-exclusive">бестселлер</p>
-                <h3 class="exclusive-h2">Марк Лутц</h3>
-                <p class="exclusive-content margin-exclusive">Изучаем Python. 3-е издание</p> <a href="#" class="buttom margin-exclusive">Заказать</a> </div>
-            <div class="right-exclusive">
-                <p class="p-exclusive margin-exclusive">бестселлер</p>
-                <h3 class="exclusive-h2">Гарри Поттер</h3>
-                <p class="exclusive-content margin-exclusive">Вся серия</p> <a href="" class="buttom margin-exclusive">Заказать</a> </div>
-        </div>
+<div class="slider-contact padding-site clearfix">
+    <div class="header clearfix">
+        <a href="#"><img src="/static/img/logo.svg" alt="logo"></a>
+        <ul class="menu clearfix">
+            <li class="menu-list"><a href="/" class="menu-link">ГЛАВНАЯ</a></li>
+            <li class="menu-list"><a href="/product/" class="menu-link menu-link-active">КАТАЛОГ</a></li>
+            <li class="menu-list"><a href="#" class="menu-link">ЛИЧНЫЙ КАБИНЕТ</a></li>
+            <li class="menu-list"><a href="/contact/" class="menu-link">КОНТАКТЫ</a></li>
+            <li class="menu-list">
+                <a href="#" class="menu-link menu-search">поиск</a>
+            </li>
+        </ul>
+        <div class="contact-us-product">Наши книги</div>
     </div>
-    <div class="clr"></div>
-    <div class="center">
-    <div class="footer">
-
-        <div class="row rstr-3" id="rstr-id-3">
-            <div class="col-4 str-3 rtd-1">© Copyright - BOOKSHOP 2020. All Rights Reserved.</div>
-            <div class="col-4 rtd-2"><img class="csite" src="/static/img/social-links.png" alt="icon"></div>
-            <div class="col-4 str-3 rtd-2">Terms & Conditions / Privacy policy & Cookies</div>
-        </div>
+</div>
+<div class="product-menu">
+    <ul class="product-menu-ul">
+        <li class="product-menu-lict-active"><a href="product-deails.html" class="product-a">ВСЕ</a></li>
+        <li class="product-menu-lict"><a href="#" class="product-a">РОМАНЫ</a></li>
+        <li class="product-menu-lict"><a href="#" class="product-a">ФАНТАСТИКА</a></li>
+        <li class="product-menu-lict"><a href="#" class="product-a">ФЭНТАЗИ</a></li>
+        <li class="product-menu-lict"><a href="#" class="product-a">НАУЧНАЯ ЛИТЕРАТУРА</a></li>
+        <li class="product-menu-lict"><a href="#" class="product-a">КЛАССИКА</a></li>
+    </ul>
+</div>
+<div class="product-block">
+    <div class="row product-catalog">
+        <col-4 class="product-catalog-col">
+            <a href="#"><img src="/static/img/product-11.jpg" alt="foto"></a>
+        </col-4>
+        <col-4 class="product-catalog-col">
+            <a href="#"><img src="/static/img/product-21.jpg" alt="foto"></a>
+        </col-4>
+        <col-4 class="product-catalog-col">
+            <a href="#"><img src="/static/img/product-31.jpg" alt="foto"></a>
+        </col-4>
     </div>
+    <div class="row product-catalog">
+        <col-4 class="product-catalog-col">
+            <a href="#"><img src="/static/img/product-41.jpg" alt="foto"></a>
+        </col-4>
+        <col-4 class="product-catalog-col">
+            <a href="#"><img src="/static/img/product-5.jpg" alt="foto"></a>
+        </col-4>
+        <col-4 class="product-catalog-col">
+            <a href="#"><img src="/static/img/product-6.jpg" alt="foto"></a>
+        </col-4>
     </div>
-</body>
+    <div class="row product-catalog">
+        <col-4 class="product-catalog-col">
+            <a href="#"><img src="/static/img/product-11.jpg" alt="foto"></a>
+        </col-4>
+        <col-4 class="product-catalog-col">
+            <a href="#"><img src="/static/img/product-21.jpg" alt="foto"></a>
+        </col-4>
+        <col-4 class="product-catalog-col">
+            <a href="#"><img src="/static/img/product-31.jpg" alt="foto"></a>
+        </col-4>
+    </div>
+    <div class="row product-catalog">
+        <col-4 class="product-catalog-col">
+            <a href="#"><img src="/static/img/product-41.jpg" alt="foto"></a>
+        </col-4>
+        <col-4 class="product-catalog-col">
+            <a href="#"><img src="/static/img/product-5.jpg" alt="foto"></a>
+        </col-4>
+        <col-4 class="product-catalog-col">
+            <a href="#"><img src="/static/img/product-6.jpg" alt="foto"></a>
+        </col-4>
+    </div>
+</div>
+<div class="reset"><img src="/static/img/reset.png" alt="icon"></div>
+<div class="exclusive clearfix">
+    <div class="left-exclusive">
+        <p class="p-exclusive margin-exclusive">бестселлер</p>
+        <h3 class="exclusive-h2">Марк Лутц</h3>
+        <p class="exclusive-content margin-exclusive">Изучаем Python. 3-е издание</p> <a href="#"
+                                                                                         class="buttom margin-exclusive">Заказать</a>
+    </div>
+    <div class="right-exclusive">
+        <p class="p-exclusive margin-exclusive">бестселлер</p>
+        <h3 class="exclusive-h2">Гарри Поттер</h3>
+        <p class="exclusive-content margin-exclusive">Вся серия</p> <a href=""
+                                                                       class="buttom margin-exclusive">Заказать</a>
+    </div>
+</div>
 
-</html>
+<div class="clr"></div>
+
+{% endblock %}

@@ -8,5 +8,6 @@ def index(request):
 def product(request):
     return render(request, 'mainapp/product.html')
 
+
 def contact(request):
     return render(request, 'mainapp/contact.html')
