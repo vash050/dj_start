@@ -1,33 +1,25 @@
 {% extends 'mainapp/base.html' %}
 {% load static %}
 {% block conteiner %}
-<div class="slider-contact padding-site clearfix">
-            <div class="header clearfix">
-                <a href="#"><img src="{% static 'img/logo.svg' %}" alt="logo"></a>
-                 <ul class="menu clearfix">
-                    <li class="menu-list"><a href="/" class="menu-link menu-link-active">ГЛАВНАЯ</a></li>
-                    <li class="menu-list"><a href="/product/" class="menu-link">КАТАЛОГ</a></li>
-                    <li class="menu-list"><a href="#" class="menu-link">ЛИЧНЫЙ КАБИНЕТ</a></li>
-                    <li class="menu-list"><a href="/contact/" class="menu-link">КОНТАКТЫ</a></li>
-                    <li class="menu-list">
-                        <a href="#" class="menu-link menu-search">поиск</a>
-                    </li>
-                </ul>
-                <div class="contact-us">Наши контакты</div>
-            </div>
-        </div>
-<div class="row main-contact"  id="contact-1">
-            <div class="col-4 col-contact">
-                <div class="icomoon"><img src="{% static 'img/icomoon.png' %}" alt="icomoon"></div>
-                <div class="icomoon-h3">Санкт-Петербург</div>
-                <div class="icomoon-p">Phone: <br>
-                    <span class="b-contact"> 8(812)121-21-21</span> <br>
-                    Email: <br>
-                    <span class="b-contact"> info@bookshop.ru </span><br>
-                    Address: <br>
-                    пр. Невский 128</div>
-            </div>
 
-            </div>
+<div class="slider-contact padding-site clearfix">
+    {% include 'mainapp/includes/inc__main_menu.html' %}
+    <div class="contact-us">Наши контакты</div>
+
+</div>
+<div class="row main-contact" id="contact-1">
+    <div class="col-4 col-contact">
+        <div class="icomoon"><img src="{% static 'img/icomoon.png' %}" alt="icomoon"></div>
+        <div class="icomoon-h3">Санкт-Петербург</div>
+        <div class="icomoon-p">Phone: <br>
+            <span class="b-contact"> 8(812)121-21-21</span> <br>
+            Email: <br>
+            <span class="b-contact"> info@bookshop.ru </span><br>
+            Address: <br>
+            пр. Невский 128
+        </div>
+    </div>
+
+</div>
 
 {% endblock %}

@@ -4,18 +4,7 @@
 {% block conteiner %}
 
 <div class="slider padding-site clearfix">
-    <div class="header clearfix">
-        <a href="#"><img src="{% static 'img/logo.svg' %}" alt="logo"></a>
-        <ul class="menu clearfix">
-            <li class="menu-list"><a href="/" class="menu-link menu-link-active">ГЛАВНАЯ</a></li>
-            <li class="menu-list"><a href="/product/" class="menu-link">КАТАЛОГ</a></li>
-            <li class="menu-list"><a href="#" class="menu-link">ЛИЧНЫЙ КАБИНЕТ</a></li>
-            <li class="menu-list"><a href="/contact/" class="menu-link">КОНТАКТЫ</a></li>
-            <li class="menu-list">
-                <a href="#" class="menu-link menu-search">поиск</a>
-            </li>
-        </ul>
-    </div>
+     {% include 'mainapp/includes/inc__main_menu.html' %}
     <div class="slider-text">
         <p class="slider-trending">НОВИНКИ</p>
         <h2 class="slider-h2">бестселлеры</h2>
