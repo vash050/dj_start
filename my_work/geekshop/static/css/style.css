@@ -46,13 +46,11 @@ a {
 
 .main-contact {
     margin: 71px 98px 122px 98px;
-    height: 370px;
 }
 
 .col-contact {
     text-align: center;
     outline: 1px solid;
-    padding-top: 48px;
 }
 
 .icomoon {
@@ -143,9 +141,9 @@ a {
     background-color:#FFF6DA;
     color:#64FF00;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 400;
     text-transform: uppercase;
-    padding: 13px 10px;
+    padding: 8px 4px;
 }
 
 .menu-link-active {
@@ -167,8 +165,16 @@ a {
     border-bottom: 3px solid #FF0000;
 }
 
+.menu-search:hover {
+    color: #FF0000;
+    border-bottom: 3px solid #FF0000;
+    text-decoration: none;
+}
+
 .menu-search {
-    background-color: #none;
+    background-color:#FFF6DA;
+    padding:16px 4px 5px 4px;
+    margin-left: 2px
 }
 
 .slider-text {
