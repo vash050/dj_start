@@ -1,10 +1,11 @@
 {% extends 'mainapp/base.html' %}
+{% load static %}
 
 {% block conteiner %}
 
 <div class="slider padding-site clearfix">
     <div class="header clearfix">
-        <a href="#"><img src="/static/img/logo.svg" alt="logo"></a>
+        <a href="#"><img src="{% static 'img/logo.svg' %}" alt="logo"></a>
         <ul class="menu clearfix">
             <li class="menu-list"><a href="/" class="menu-link menu-link-active">ГЛАВНАЯ</a></li>
             <li class="menu-list"><a href="/product/" class="menu-link">КАТАЛОГ</a></li>
@@ -63,24 +64,24 @@
     <table class="trending-table">
         <tr class="tredding-tr">
             <td class="treding-td">
-                <a href="#" class="treding-a"><img src="/static/img/product-11.jpg" alt="foto" class="treding-img"></a>
+                <a href="#" class="treding-a"><img src="{% static 'img/product-11.jpg' %}" alt="foto" class="treding-img"></a>
             </td>
             <td class="treding-td">
-                <a href="#" class="treding-a"><img src="/static/img/product-21.jpg" alt="foto" class="treding-img"></a>
+                <a href="#" class="treding-a"><img src="{% static '/img/product-21.jpg' %}" alt="foto" class="treding-img"></a>
             </td>
             <td class="treding-td">
-                <a href="#" class="treding-a"><img src="/static/img/product-31.jpg" alt="foto" class="treding-img"></a>
+                <a href="#" class="treding-a"><img src="{% static 'img/product-31.jpg' %}" alt="foto" class="treding-img"></a>
             </td>
         </tr>
         <tr class="tredding-tr">
             <td class="treding-td">
-                <a href="#" class="treding-a"><img src="/static/img/product-41.jpg" alt="foto" class="treding-img"></a>
+                <a href="#" class="treding-a"><img src="{% static 'img/product-41.jpg' %}" alt="foto" class="treding-img"></a>
             </td>
             <td class="treding-td">
-                <a href="#" class="treding-a"><img src="/static/img/product-5.jpg" alt="foto" class="treding-img"></a>
+                <a href="#" class="treding-a"><img src="{% static 'img/product-5.jpg' %}" alt="foto" class="treding-img"></a>
             </td>
             <td class="treding-td">
-                <a href="#" class="treding-a"><img src="/static/img/product-6.jpg" alt="foto" class="treding-img"></a>
+                <a href="#" class="treding-a"><img src="{% static 'img/product-6.jpg' %}" alt="foto" class="treding-img"></a>
             </td>
         </tr>
     </table>
@@ -98,27 +99,27 @@
 <div class="exclusive-second clearfix">
     <table class="exlusive-second-table">
         <tr>
-            <td class="exclusive-second-td1" rowspan="2"><img src="/static/img/product-1-lg.jpg" alt="foto">
+            <td class="exclusive-second-td1" rowspan="2"><img src="{% static 'img/product-1-lg.jpg' %}" alt="foto">
                 <p class="exclusive-exclusive-second">издание 1966 года</p>
                 <h3 class="h3-exclusive-second">И.А. Гончаров</h3>
                 <p class="p-exclusive-second">Полное собрание сочинений</p> <a href="#" class="buttom margin-exclusive">Заказать</a>
             </td>
             <td class="exclusive-second-td">
-                <a href="#" class="exclusive-second-link"><img src="/static/img/product-2-sm.jpg" alt="foto"
+                <a href="#" class="exclusive-second-link"><img src="{% static 'img/product-2-sm.jpg' %}" alt="foto"
                                                                class="exclusive-second-img"></a>
             </td>
             <td class="exclusive-second-td">
-                <a href="#" class="exclusive-second-link"><img src="/static/img/product-3-sm.jpg" alt="foto"
+                <a href="#" class="exclusive-second-link"><img src="{% static 'img/product-3-sm.jpg' %}" alt="foto"
                                                                class="exclusive-second-img"></a>
             </td>
         </tr>
         <tr>
             <td class="exclusive-second-td2">
-                <a href="#" class="exclusive-second-link"><img src="/static/img/product-4-sm.jpg" alt="foto"
+                <a href="#" class="exclusive-second-link"><img src="{% static 'img/product-4-sm.jpg' %}" alt="foto"
                                                                class="exclusive-second-img"></a>
             </td>
             <td class="exclusive-second-td2">
-                <a href="#" class="exclusive-second-link"><img src="/static/img/product-5-sm.jpg" alt="foto"
+                <a href="#" class="exclusive-second-link"><img src="{% static 'img/product-5-sm.jpg' %}" alt="foto"
                                                                class="exclusive-second-img"></a>
             </td>
         </tr>
@@ -128,8 +129,8 @@
     <p class="p-mobule">mobile app</p>
     <h3 class="mobule-h2">Установите наше приложение</h3>
     <p class="mobule-content">Покупайте и читайте в любом месте</p>
-    <a href="" class="mobule-app"><img src="/static/img/app-store.jpg" alt="link"></a>
-    <a href="" class="mobule-google"><img src="/static/img/google-play.jpg" alt="link"></a>
+    <a href="" class="mobule-app"><img src="{% static 'img/app-store.jpg' %}" alt="link"></a>
+    <a href="" class="mobule-google"><img src="{% static 'img/google-play.jpg' %}" alt="link"></a>
 </div>
 
 {% endblock %}

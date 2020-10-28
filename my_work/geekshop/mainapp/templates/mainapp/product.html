@@ -1,10 +1,11 @@
 {% extends 'mainapp/base.html' %}
+{% load static %}
 
 {% block conteiner %}
 
 <div class="slider-contact padding-site clearfix">
     <div class="header clearfix">
-        <a href="#"><img src="/static/img/logo.svg" alt="logo"></a>
+        <a href="#"><img src="{% static 'img/logo.svg' %}" alt="logo"></a>
         <ul class="menu clearfix">
             <li class="menu-list"><a href="/" class="menu-link">ГЛАВНАЯ</a></li>
             <li class="menu-list"><a href="/product/" class="menu-link menu-link-active">КАТАЛОГ</a></li>
@@ -30,50 +31,50 @@
 <div class="product-block">
     <div class="row product-catalog">
         <col-4 class="product-catalog-col">
-            <a href="#"><img src="/static/img/product-11.jpg" alt="foto"></a>
+            <a href="#"><img src="{% static 'img/product-11.jpg' %}" alt="foto"></a>
         </col-4>
         <col-4 class="product-catalog-col">
-            <a href="#"><img src="/static/img/product-21.jpg" alt="foto"></a>
+            <a href="#"><img src="{% static 'img/product-21.jpg' %}" alt="foto"></a>
         </col-4>
         <col-4 class="product-catalog-col">
-            <a href="#"><img src="/static/img/product-31.jpg" alt="foto"></a>
-        </col-4>
-    </div>
-    <div class="row product-catalog">
-        <col-4 class="product-catalog-col">
-            <a href="#"><img src="/static/img/product-41.jpg" alt="foto"></a>
-        </col-4>
-        <col-4 class="product-catalog-col">
-            <a href="#"><img src="/static/img/product-5.jpg" alt="foto"></a>
-        </col-4>
-        <col-4 class="product-catalog-col">
-            <a href="#"><img src="/static/img/product-6.jpg" alt="foto"></a>
+            <a href="#"><img src="{% static 'img/product-31.jpg' %}" alt="foto"></a>
         </col-4>
     </div>
     <div class="row product-catalog">
         <col-4 class="product-catalog-col">
-            <a href="#"><img src="/static/img/product-11.jpg" alt="foto"></a>
+            <a href="#"><img src="{% static 'img/product-41.jpg' %}" alt="foto"></a>
         </col-4>
         <col-4 class="product-catalog-col">
-            <a href="#"><img src="/static/img/product-21.jpg" alt="foto"></a>
+            <a href="#"><img src="{% static 'img/product-5.jpg' %}" alt="foto"></a>
         </col-4>
         <col-4 class="product-catalog-col">
-            <a href="#"><img src="/static/img/product-31.jpg" alt="foto"></a>
+            <a href="#"><img src="{% static 'img/product-6.jpg' %}" alt="foto"></a>
         </col-4>
     </div>
     <div class="row product-catalog">
         <col-4 class="product-catalog-col">
-            <a href="#"><img src="/static/img/product-41.jpg" alt="foto"></a>
+            <a href="#"><img src="{% static 'img/product-11.jpg' %}" alt="foto"></a>
         </col-4>
         <col-4 class="product-catalog-col">
-            <a href="#"><img src="/static/img/product-5.jpg" alt="foto"></a>
+            <a href="#"><img src="{% static 'img/product-21.jpg' %}" alt="foto"></a>
         </col-4>
         <col-4 class="product-catalog-col">
-            <a href="#"><img src="/static/img/product-6.jpg" alt="foto"></a>
+            <a href="#"><img src="{% static 'img/product-31.jpg' %}" alt="foto"></a>
+        </col-4>
+    </div>
+    <div class="row product-catalog">
+        <col-4 class="product-catalog-col">
+            <a href="#"><img src="{% static 'img/product-41.jpg' %}" alt="foto"></a>
+        </col-4>
+        <col-4 class="product-catalog-col">
+            <a href="#"><img src="{% static 'img/product-5.jpg' %}" alt="foto"></a>
+        </col-4>
+        <col-4 class="product-catalog-col">
+            <a href="#"><img src="{% static 'img/product-6.jpg' %}" alt="foto"></a>
         </col-4>
     </div>
 </div>
-<div class="reset"><img src="/static/img/reset.png" alt="icon"></div>
+<div class="reset"><img src="{% static 'img/reset.png' %}" alt="icon"></div>
 <div class="exclusive clearfix">
     <div class="left-exclusive">
         <p class="p-exclusive margin-exclusive">бестселлер</p>
