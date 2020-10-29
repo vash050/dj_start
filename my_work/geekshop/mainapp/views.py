@@ -41,3 +41,15 @@ def contact(request):
         'locations': locations,
     }
     return render(request, 'mainapp/contact.html', context=context)
+
+# def main_menu(request):
+#     links_menu = [
+#         {'href': 'index', 'name': 'ГЛАВНАЯ'},
+#         {'href': 'product', 'name': 'КАТАЛОГ'},
+#         # {'href': '#', 'name': 'ЛИЧНЫЙ КАБИНЕТ'},
+#         {'href': 'contact', 'name': 'КОНТАКТЫ'},
+#         ]
+#     context = {
+#         'links_menu': links_menu
+#     }
+#     return render(request, 'mainapp/includes/inc__main_menu.html', context=context)
