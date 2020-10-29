@@ -51,7 +51,11 @@ a {
 .col-contact {
     text-align: center;
     outline: 1px solid;
+    display: inline-block;
+    margin: auto;
+    padding: 20px 20px;
 }
+
 
 .icomoon {
     height: 48px;
@@ -117,6 +121,8 @@ a {
 #contact-1 {
     margin-right: 98px;
     margin-left: 98px;
+    display: flex;
+    justify-content: center;
 }
 
 .padding-site {
@@ -681,7 +687,6 @@ a {
     background-color: #f7f7f7;
     width: 1366px;
     margin: 0 auto;
-    position: absolute;
 }
 
 #rstr-id-1 {

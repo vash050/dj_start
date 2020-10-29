@@ -10,7 +10,7 @@
 <div class="row main-contact" id="contact-1">
     {% if locations %}
     {% for item in locations %}
-    <div class="col-4 col-contact">
+    <div class="col-contact">
         <div class="icomoon"><img src="{% static 'img/icomoon.png' %}" alt="icomoon"></div>
         <div class="icomoon-h3">{{ item.city }}</div>
         <div class="icomoon-p">Phone: <br>
@@ -19,9 +19,10 @@
             <span class="b-contact">{{ item.mail }}</span><br>
             Address: <br>{{ item.address }}
         </div>
-        {% endfor %}
-
     </div>
+    {% endfor %}
+
+
     {% else %}
         <h3>Данные загружаються</h3>
     {% endif %}
