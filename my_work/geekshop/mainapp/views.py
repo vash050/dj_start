@@ -35,7 +35,6 @@ def contact(request):
             'mail': 'barnaul@bookshoop.ru',
             'address': 'ул. Тракторная 18',
         },
-
     ]
     context = {
         'page_title': 'контакты',
