@@ -22,5 +22,6 @@ urlpatterns = [
     # path('includes/inc__main_menu/', mainapp.main_menu),
     path('product/', mainapp.product, name='product'),
     path('contact/', mainapp.contact, name='contact'),
+    path('product_deails/', mainapp.product_deails, name='product_deails'),
     path('admin/', admin.site.urls),
 ]

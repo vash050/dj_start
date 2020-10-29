@@ -42,6 +42,13 @@ def contact(request):
     }
     return render(request, 'mainapp/contact.html', context=context)
 
+
+def product_deails(request):
+    context = {
+        'page_title': 'товар',
+    }
+    return render(request, 'mainapp/product_deails.html', context=context)
+
 # def main_menu(request):
 #     links_menu = [
 #         {'href': 'index', 'name': 'ГЛАВНАЯ'},
@@ -50,6 +57,6 @@ def contact(request):
 #         {'href': 'contact', 'name': 'КОНТАКТЫ'},
 #         ]
 #     context = {
-#         'links_menu': links_menu
+#         'links_menu': links_menu,
 #     }
 #     return render(request, 'mainapp/includes/inc__main_menu.html', context=context)
