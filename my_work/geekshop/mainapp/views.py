@@ -2,20 +2,40 @@ from django.shortcuts import render
 
 
 def index(request):
+    links_menu = [
+        {'href': 'index', 'name': 'ГЛАВНАЯ'},
+        {'href': 'product', 'name': 'КАТАЛОГ'},
+        # {'href': '#', 'name': 'ЛИЧНЫЙ КАБИНЕТ'},
+        {'href': 'contact', 'name': 'КОНТАКТЫ'},
+    ]
     context = {
         'page_title': 'главная',
+        'links_menu': links_menu,
     }
     return render(request, 'mainapp/index.html', context=context)
 
 
 def product(request):
+    links_menu = [
+        {'href': 'index', 'name': 'ГЛАВНАЯ'},
+        {'href': 'product', 'name': 'КАТАЛОГ'},
+        # {'href': '#', 'name': 'ЛИЧНЫЙ КАБИНЕТ'},
+        {'href': 'contact', 'name': 'КОНТАКТЫ'},
+    ]
     context = {
         'page_title': 'каталог',
+        'links_menu': links_menu,
     }
     return render(request, 'mainapp/product.html', context=context)
 
 
 def contact(request):
+    links_menu = [
+        {'href': 'index', 'name': 'ГЛАВНАЯ'},
+        {'href': 'product', 'name': 'КАТАЛОГ'},
+        # {'href': '#', 'name': 'ЛИЧНЫЙ КАБИНЕТ'},
+        {'href': 'contact', 'name': 'КОНТАКТЫ'},
+    ]
     locations = [
         {
             'city': 'Москва',
@@ -39,24 +59,20 @@ def contact(request):
     context = {
         'page_title': 'контакты',
         'locations': locations,
+        'links_menu': links_menu,
     }
     return render(request, 'mainapp/contact.html', context=context)
 
 
 def product_deails(request):
+    links_menu = [
+        {'href': 'index', 'name': 'ГЛАВНАЯ'},
+        {'href': 'product', 'name': 'КАТАЛОГ'},
+        # {'href': '#', 'name': 'ЛИЧНЫЙ КАБИНЕТ'},
+        {'href': 'contact', 'name': 'КОНТАКТЫ'},
+    ]
     context = {
         'page_title': 'товар',
+        'links_menu': links_menu,
     }
     return render(request, 'mainapp/product_deails.html', context=context)
-
-# def main_menu(request):
-#     links_menu = [
-#         {'href': 'index', 'name': 'ГЛАВНАЯ'},
-#         {'href': 'product', 'name': 'КАТАЛОГ'},
-#         # {'href': '#', 'name': 'ЛИЧНЫЙ КАБИНЕТ'},
-#         {'href': 'contact', 'name': 'КОНТАКТЫ'},
-#         ]
-#     context = {
-#         'links_menu': links_menu,
-#     }
-#     return render(request, 'mainapp/includes/inc__main_menu.html', context=context)

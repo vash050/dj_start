@@ -19,7 +19,6 @@ import mainapp.views as mainapp
 
 urlpatterns = [
     path('', mainapp.index, name='index'),
-    # path('includes/inc__main_menu/', mainapp.main_menu),
     path('product/', mainapp.product, name='product'),
     path('contact/', mainapp.contact, name='contact'),
     path('product_deails/', mainapp.product_deails, name='product_deails'),

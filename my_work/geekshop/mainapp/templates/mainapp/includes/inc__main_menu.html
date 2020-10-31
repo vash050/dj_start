@@ -3,22 +3,19 @@
 <div class="header clearfix">
     <a href="#"><img src="{% static 'img/logo.svg' %}" alt="logo"></a>
     <ul class="menu clearfix">
-<!--        {% for link in links_menu %}-->
-<!--        <p>{{ link }}</p>-->
-<!--        <li class="menu-list">-->
-<!--            <a href="{% url link.href %}"-->
-<!--               class="menu-link-->
-<!--               {% if request.resover_match.url_name == link.href %}-->
-<!--                menu-link-active-->
-<!--               {% endif %}">-->
-<!--                {{ link.name }}-->
-<!--            </a>-->
-<!--        </li>-->
-<!--        {% endfor %}-->
-        <li class="menu-list"><a href="{% url 'index' %}" class="menu-link menu-link-active">ГЛАВНАЯ</a></li>
-        <li class="menu-list"><a href="{% url 'product' %}" class="menu-link">КАТАЛОГ</a></li>
-        <li class="menu-list"><a href="#" class="menu-link">ЛИЧНЫЙ КАБИНЕТ</a></li>
-        <li class="menu-list"><a href="{% url 'contact' %}" class="menu-link">КОНТАКТЫ</a></li>
+        {% for link in links_menu %}
+        <li class="menu-list">
+            <a href="{% url link.href %}"
+               class="menu-link
+               {% if request.resolver_match.url_name == link.href %}
+                menu-link-active
+               {% endif %}">
+                {{ link.name }}
+            </a>
+        </li>
+        {% endfor %}
+
+        <li class="menu-list"><a href="{% url 'contact' %}" class="menu-link">КОНТАКТЫ</a></li>-->
 
         <li class="menu-list">
             <a href="#" class="menu-search"><img src="{% static 'img/search.svg' %}" alt="logo"></a>
