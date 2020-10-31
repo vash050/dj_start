@@ -9,10 +9,10 @@ def get_catalog_menu():
 
 def index(request):
     links_menu = [
-        {'href': 'index', 'name': 'ГЛАВНАЯ'},
-        {'href': 'product', 'name': 'КАТАЛОГ'},
-        # {'href': '#', 'name': 'ЛИЧНЫЙ КАБИНЕТ'},
-        {'href': 'contact', 'name': 'КОНТАКТЫ'},
+        {'href': 'main:index', 'name': 'ГЛАВНАЯ'},
+        {'href': 'main:product', 'name': 'КАТАЛОГ'},
+        # {'href': '#', 'main:name': 'ЛИЧНЫЙ КАБИНЕТ'},
+        {'href': 'main:contact', 'name': 'КОНТАКТЫ'},
     ]
     context = {
         'page_title': 'главная',
@@ -23,10 +23,10 @@ def index(request):
 
 def product(request):
     links_menu = [
-        {'href': 'index', 'name': 'ГЛАВНАЯ'},
-        {'href': 'product', 'name': 'КАТАЛОГ'},
-        # {'href': '#', 'name': 'ЛИЧНЫЙ КАБИНЕТ'},
-        {'href': 'contact', 'name': 'КОНТАКТЫ'},
+        {'href': 'main:index', 'name': 'ГЛАВНАЯ'},
+        {'href': 'main:product', 'name': 'КАТАЛОГ'},
+        # {'href': '#', 'main:name': 'ЛИЧНЫЙ КАБИНЕТ'},
+        {'href': 'main:contact', 'name': 'КОНТАКТЫ'},
     ]
     context = {
         'page_title': 'каталог',
@@ -38,10 +38,10 @@ def product(request):
 
 def contact(request):
     links_menu = [
-        {'href': 'index', 'name': 'ГЛАВНАЯ'},
-        {'href': 'product', 'name': 'КАТАЛОГ'},
-        # {'href': '#', 'name': 'ЛИЧНЫЙ КАБИНЕТ'},
-        {'href': 'contact', 'name': 'КОНТАКТЫ'},
+        {'href': 'main:index', 'name': 'ГЛАВНАЯ'},
+        {'href': 'main:product', 'name': 'КАТАЛОГ'},
+        # {'href': '#', 'main:name': 'ЛИЧНЫЙ КАБИНЕТ'},
+        {'href': 'main:contact', 'name': 'КОНТАКТЫ'},
     ]
     locations = [
         {
@@ -73,10 +73,10 @@ def contact(request):
 
 def product_deails(request):
     links_menu = [
-        {'href': 'index', 'name': 'ГЛАВНАЯ'},
-        {'href': 'product', 'name': 'КАТАЛОГ'},
-        # {'href': '#', 'name': 'ЛИЧНЫЙ КАБИНЕТ'},
-        {'href': 'contact', 'name': 'КОНТАКТЫ'},
+        {'href': 'main:index', 'name': 'ГЛАВНАЯ'},
+        {'href': 'main:product', 'name': 'КАТАЛОГ'},
+        # {'href': '#', 'main:name': 'ЛИЧНЫЙ КАБИНЕТ'},
+        {'href': 'main:contact', 'name': 'КОНТАКТЫ'},
     ]
     context = {
         'page_title': 'товар',
