@@ -1,5 +1,11 @@
 from django.shortcuts import render
 
+from mainapp.models import GenreBooks
+
+
+def get_catalog_menu():
+    return GenreBooks.objects.all()
+
 
 def index(request):
     links_menu = [
@@ -25,6 +31,7 @@ def product(request):
     context = {
         'page_title': 'каталог',
         'links_menu': links_menu,
+        'catalog_menu': get_catalog_menu(),
     }
     return render(request, 'mainapp/product.html', context=context)
 

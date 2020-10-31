@@ -810,6 +810,7 @@ a {
 .product-menu {
     margin-top: 71px;
     margin-bottom: 71px;
+    display: flex;
 }
 
 .product-menu-ul {
@@ -868,7 +869,7 @@ a {
 
 .product-block {
     clear: both;
-    margin-top: 160px;
+    margin-top: 50px;
 }
 
 .product-block>.product-catalog {

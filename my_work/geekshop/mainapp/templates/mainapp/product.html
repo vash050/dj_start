@@ -4,20 +4,18 @@
 {% block conteiner %}
 
 <div class="slider-contact padding-site clearfix">
-     {% include 'mainapp/includes/inc__main_menu.html' %}
+
+    {% include 'mainapp/includes/inc__main_menu.html' %}
+
     <div class="contact-us-product">Наши книги</div>
 </div>
-<div class="product-menu">
-    <ul class="product-menu-ul">
-        <li class="product-menu-lict-active"><a href="product-deails.html" class="product-a">ВСЕ</a></li>
-        <li class="product-menu-lict"><a href="#" class="product-a">РОМАНЫ</a></li>
-        <li class="product-menu-lict"><a href="#" class="product-a">ФАНТАСТИКА</a></li>
-        <li class="product-menu-lict"><a href="#" class="product-a">ФЭНТАЗИ</a></li>
-        <li class="product-menu-lict"><a href="#" class="product-a">НАУЧНАЯ ЛИТЕРАТУРА</a></li>
-        <li class="product-menu-lict"><a href="#" class="product-a">КЛАССИКА</a></li>
-    </ul>
-</div>
+
 <div class="product-block">
+    <div class="product-menu">
+
+        {% include 'mainapp/includes/inc__catalog_menu.html' %}
+
+    </div>
     <div class="row product-catalog">
         <col-4 class="product-catalog-col">
             <a href="#"><img src="{% static 'img/product-11.jpg' %}" alt="foto"></a>

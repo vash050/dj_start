@@ -1,0 +1,18 @@
+<ul class="product-menu-ul">
+    <li class="product-menu-lict-active">
+        <a href="product-deails.html" class="product-a">
+            ВСЕ
+        </a>
+    </li>
+
+    {% for item in catalog_menu %}
+
+    <li class="product-menu-lict">
+        <a href="#" class="product-a">
+            {{ item }}
+        </a>
+    </li>
+
+    {% endfor %}
+
+</ul>

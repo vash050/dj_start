@@ -10,7 +10,7 @@ class GenreBooks(models.Model):
         verbose_name_plural = 'жанры книг'
 
     def __str__(self):
-        return f'жанр : {self.genre}'
+        return f'{self.genre}'
 
 
 class Book(models.Model):
