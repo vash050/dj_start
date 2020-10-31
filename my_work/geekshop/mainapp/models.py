@@ -16,6 +16,7 @@ class GenreBooks(models.Model):
 class Book(models.Model):
     genre_book = models.ForeignKey(GenreBooks, on_delete=models.CASCADE)
     name = models.CharField('книга', max_length=64)
+    image = models.ImageField(upload_to='books_images', blank=True)
     author = models.CharField('автор', max_length=64)
     description = models.TextField('Описание', blank=True)
     short_description = models.CharField('краткое описание', max_length=64, blank=True)
