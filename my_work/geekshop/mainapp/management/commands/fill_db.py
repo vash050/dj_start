@@ -12,6 +12,10 @@ def load_from_json(file_name):
 
 
 class Command(BaseCommand):
+    """
+    таблицы связаны по id, но это потому что для получения json я парсил бд проекта,
+    в реальности я бы использовал для связи наименования жанра
+    """
     help = 'Fill data in database'
 
     def handle(self, *args, **options):
