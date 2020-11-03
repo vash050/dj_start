@@ -71,7 +71,7 @@ def contact(request):
     return render(request, 'mainapp/contact.html', context=context)
 
 
-def product_deails(request):
+def product_details(request):
     links_menu = [
         {'href': 'main:index', 'name': 'ГЛАВНАЯ'},
         {'href': 'main:product', 'name': 'КАТАЛОГ'},
@@ -82,4 +82,4 @@ def product_deails(request):
         'page_title': 'товар',
         'links_menu': links_menu,
     }
-    return render(request, 'mainapp/product_deails.html', context=context)
+    return render(request, 'mainapp/product_details.html', context=context)

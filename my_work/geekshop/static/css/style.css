@@ -903,18 +903,18 @@ a {
 
 /*page product-deails*/
 
-.slider-contact-deails {
+.slider-contact-details {
     height: 119px;
     background-color: #fff;
     position: relative;
 }
 
-.menu-deails {
+.menu-details {
     height: 71px;
     background-color: #f4f4f4;
 }
 
-.deails-ul {
+.details-ul {
     width: 680px;
     margin-left: 358px;
         padding-top: 23px;
@@ -936,10 +936,10 @@ a {
 .color-foto-1>a:hover {
      outline: 1px solid #212121;
 }
-.deails-left {
+.details-left {
     text-align: center;
 }
-.deails-h2 {
+.details-h2 {
   font-family: Montserrat;
   font-size: 36px;
   font-weight: bold;
@@ -953,12 +953,12 @@ a {
   display:flex;
 
 }
-.deails-p {
+.details-p {
     margin-left: 43%;
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.deais-p2 {
+.details-p2 {
   font-family: Gotham;
   font-size: 36px;
   font-weight: 300;
@@ -971,10 +971,10 @@ a {
   display: flex;
 }
 
-.deails-span {
+.details-span {
    font-size: 72px; 
 }
-.deails-buttom {
+.details-buttom {
     color: #fff;
     font-size: 22px;
     font-weight: 700;
@@ -992,26 +992,26 @@ a {
 }
 
 
-.deails-buttom:hover {
+.details-buttom:hover {
     background: #f44336 url("../img/arrow2.png") no-repeat 350px 16px;
     text-decoration: none;
     color: #fff;
 }
 
-.deails-buttom:active {
+.details-buttom:active {
     box-shadow: none;
 }
-.deails-related  {
+.details-related  {
     width: 100%;
     margin-bottom: 120px;
 }
-.deails-table {
+.details-table {
     margin-left: 45px;
 }
-.deails-td {
+.details-td {
     border: 30px solid #fff;
 }
-.deails-td:hover{
+.details-td:hover{
     outline: 1px solid #212121;
 }
 .menu-link-active-deails {
