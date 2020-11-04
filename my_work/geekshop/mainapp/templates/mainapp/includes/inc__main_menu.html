@@ -7,13 +7,26 @@
         <li class="menu-list">
             <a href="{% url link.href %}"
                class="menu-link
-               {% if request.resolver_match.view_name == link.href %}
-                menu-link-active
-               {% endif %}">
+                            {% if request.resolver_match.view_name == link.href %}
+                               menu-link-active
+                            {% endif %}">
                 {{ link.name }}
             </a>
         </li>
         {% endfor %}
+
+        <li class="menu-list">
+            {% if user.is_authenticated %}
+            <a href="{#% url 'auth:profile' %#}" class="menu-link">
+                {{ user.first_name|default:'пользователь'|title }}
+            </a>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <a href="{% url 'auth:logout' %}" class="menu-link">выйти</a>
+            {% else %}
+            <a href="{% url 'auth:login' %}" class="menu-link">вход</a>
+            {% endif %}
+        </li>
 
         <li class="menu-list">
             <a href="#" class="menu-search"><img src="{% static 'img/search.svg' %}" alt="logo"></a>
