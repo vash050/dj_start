@@ -1027,3 +1027,58 @@ a {
     display: flex;
     margin-left: 25%;
 }
+
+/* auth_page */
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.login {
+    outline: 1px solid;
+    margin: 100px;
+    background-color: aliceblue;
+}
+
+.text-center {
+    margin: 10px;
+}
+
+.login-form {
+    margin: 10px 10px;
+    list-style-type: none;
+
+}
+
+.username {
+    margin: 0px 20px;
+}
+
+.password {
+    margin-left: 110px;
+}
+
+.btn,
+.btn-round,
+.form-control{
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.form-horizontal {
+    align-content: center;
+}
+
+.val {
+    margin-left: 240px;
+    margin-top: 0px;
+}
+
+.btn-auth {
+    display: block;
+    margin: 20px 100px;
+    outline: 1px solid;
+    text-align: center;
+}
+
