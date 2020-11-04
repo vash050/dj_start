@@ -1073,6 +1073,7 @@ a {
 .val {
     margin-left: 240px;
     margin-top: 0px;
+    width: 100px;
 }
 
 .btn-auth {
