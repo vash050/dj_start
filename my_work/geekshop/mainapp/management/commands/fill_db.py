@@ -1,9 +1,10 @@
 import json
 
-from django.contrib.auth.models import User
 from django.core.management.base import BaseCommand, CommandError
 
 from mainapp.models import GenreBooks, Book
+
+from authapp.models import ShopUser
 
 
 def load_from_json(file_name):
@@ -29,5 +30,5 @@ class Command(BaseCommand):
             item['genre_book'] = genre
             Book.objects.create(**item)
 
-        if not User.objects.filter(username='django').exists():
-            User.objects.create_superuser('django', 'django@gb.local', 'geekbrains')
+        if not ShopUser.objects.filter(username='django').exists():
+            ShopUser.objects.create_superuser('django', 'django@gb.local', 'geekbrains')
