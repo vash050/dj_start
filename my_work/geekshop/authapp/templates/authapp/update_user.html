@@ -4,9 +4,9 @@
 
 {% block container %}
 <div class="h2 text-center head">
-    Вход
+    редактирование профиля
 </div>
-<form class="form-horizontal" method="post">
+<form class="form-horizontal" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <ul class="login-form">
         <li>
@@ -14,13 +14,13 @@
         </li>
         <li>
             <br>
-            <input class="form-control val" type="submit" value="войти">
+            <input class="form-control val" type="submit" value="сохранить">
         </li>
     </ul>
 </form>
-<a href="{% url 'auth:register' %}"
+<a href="{% url 'main:index' %}"
    class="btn-auth">
-    зарегистрироваться
+    на главную
 </a>
 
 {% endblock %}
