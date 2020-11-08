@@ -35,7 +35,9 @@
 
         <li class="menu-list">
             <a href="#" class="menu-search"><img src="{% static 'img/search.svg' %}" alt="logo"></a>
-            <a href="#" class="menu-search"><img src="{% static 'img/basket.png' %}" alt="logo"></a>
+            <a href="{% url 'basket:index' %}" class="menu-search">
+                <img src="{% static 'img/basket.png' %}" alt="logo">
+            </a>
         </li>
     </ul>
 </div>

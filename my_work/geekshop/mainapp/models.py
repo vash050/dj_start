@@ -8,6 +8,7 @@ class GenreBooks(models.Model):
     class Meta:
         verbose_name = 'жанр книг'
         verbose_name_plural = 'жанры книг'
+        ordering = ['genre']
 
     def __str__(self):
         return f'{self.genre}'

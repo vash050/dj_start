@@ -66,8 +66,11 @@
     <div class="left-exclusive">
         <p class="p-exclusive margin-exclusive">бестселлер</p>
         <h3 class="exclusive-h2">Марк Лутц</h3>
-        <p class="exclusive-content margin-exclusive">Изучаем Python. 3-е издание</p> <a href="#"
-                                                                                         class="buttom margin-exclusive">Заказать</a>
+        <p class="exclusive-content margin-exclusive">Изучаем Python. 3-е издание</p>
+        <a href="{% url 'basket:add_book' 1 %}"
+           class="buttom margin-exclusive">
+            Заказать
+        </a>
     </div>
     <div class="right-exclusive">
         <p class="p-exclusive margin-exclusive">бестселлер</p>
