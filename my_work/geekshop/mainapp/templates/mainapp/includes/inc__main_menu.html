@@ -7,7 +7,7 @@
         <li class="menu-list">
             <a href="{% url link.href %}"
                class="menu-link
-                            {% if request.resolver_match.view_name == link.href %}
+{% if request.resolver_match.view_name == link.href or request.resolver_match.url_name == 'catalog_page' and link.name == 'КАТАЛОГ' %}
                                menu-link-active
                             {% endif %}">
                 {{ link.name }}

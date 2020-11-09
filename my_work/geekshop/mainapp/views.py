@@ -2,6 +2,8 @@ from django.shortcuts import render
 
 from mainapp.models import GenreBooks
 
+from mainapp.models import Book
+
 
 def get_catalog_menu():
     return GenreBooks.objects.all()
@@ -11,7 +13,6 @@ def index(request):
     links_menu = [
         {'href': 'main:index', 'name': 'ГЛАВНАЯ'},
         {'href': 'main:product', 'name': 'КАТАЛОГ'},
-        # {'href': '#', 'main:name': 'ЛИЧНЫЙ КАБИНЕТ'},
         {'href': 'main:contact', 'name': 'КОНТАКТЫ'},
     ]
     context = {
@@ -25,7 +26,6 @@ def product(request):
     links_menu = [
         {'href': 'main:index', 'name': 'ГЛАВНАЯ'},
         {'href': 'main:product', 'name': 'КАТАЛОГ'},
-        # {'href': '#', 'main:name': 'ЛИЧНЫЙ КАБИНЕТ'},
         {'href': 'main:contact', 'name': 'КОНТАКТЫ'},
     ]
     context = {
@@ -40,7 +40,6 @@ def contact(request):
     links_menu = [
         {'href': 'main:index', 'name': 'ГЛАВНАЯ'},
         {'href': 'main:product', 'name': 'КАТАЛОГ'},
-        # {'href': '#', 'main:name': 'ЛИЧНЫЙ КАБИНЕТ'},
         {'href': 'main:contact', 'name': 'КОНТАКТЫ'},
     ]
     locations = [
@@ -75,7 +74,6 @@ def product_details(request):
     links_menu = [
         {'href': 'main:index', 'name': 'ГЛАВНАЯ'},
         {'href': 'main:product', 'name': 'КАТАЛОГ'},
-        # {'href': '#', 'main:name': 'ЛИЧНЫЙ КАБИНЕТ'},
         {'href': 'main:contact', 'name': 'КОНТАКТЫ'},
     ]
     context = {
@@ -83,3 +81,25 @@ def product_details(request):
         'links_menu': links_menu,
     }
     return render(request, 'mainapp/product_details.html', context=context)
+
+
+def catalog_page(request, genre_pk):
+    if genre_pk == 0:
+        books = Book.objects.all()
+    else:
+        books = Book.objects.filter(genre_book_id=genre_pk)
+
+    links_menu = [
+        {'href': 'main:index', 'name': 'ГЛАВНАЯ'},
+        {'href': 'main:product', 'name': 'КАТАЛОГ'},
+        {'href': 'main:contact', 'name': 'КОНТАКТЫ'},
+    ]
+
+    context = {
+        'page_title': 'каталог',
+        'links_menu': links_menu,
+        'catalog_menu': get_catalog_menu(),
+        'books': books,
+        'genre_pk': genre_pk,
+    }
+    return render(request, 'mainapp/product.html', context=context)

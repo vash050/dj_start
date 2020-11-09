@@ -1,10 +1,21 @@
 from django.http import HttpResponseRedirect
+from django.shortcuts import render
 
 from basketapp.models import Basket
 
 
-def index(request):
-    pass
+def index(request):  # чтобы не ломалось
+    links_menu = [
+        {'href': 'main:index', 'name': 'ГЛАВНАЯ'},
+        {'href': 'main:product', 'name': 'КАТАЛОГ'},
+        {'href': 'main:contact', 'name': 'КОНТАКТЫ'},
+    ]
+
+    context = {
+        'page_title': 'корзина',
+        'links_menu': links_menu,
+    }
+    return render(request, 'mainapp/index.html', context=context)
 
 
 def add_book(request, pk_book):

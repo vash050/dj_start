@@ -1,15 +1,19 @@
 <ul class="product-menu-ul">
     <li class="product-menu-lict-active">
-        <a href="product-deails.html" class="product-a">
+        <a href="{% url 'main:catalog_page' 0 %}"
+           class="{% if request.resolver_match.kwargs.genre_pk == 0 %}
+                               product-a
+                            {% endif %}">
             ВСЕ
         </a>
     </li>
-
     {% for item in catalog_menu %}
-
     <li class="product-menu-lict">
-        <a href="#" class="product-a">
-            {{ item }}
+        <a href="{% url 'main:catalog_page' item.pk %}"
+           class="{% if request.resolver_match.kwargs.genre_pk == item.pk %}
+                               product-a
+                            {% endif %}">
+            {{ item.genre }}
         </a>
     </li>
 

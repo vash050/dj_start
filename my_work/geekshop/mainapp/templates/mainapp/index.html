@@ -4,7 +4,7 @@
 {% block conteiner %}
 
 <div class="slider padding-site clearfix">
-     {% include 'mainapp/includes/inc__main_menu.html' %}
+    {% include 'mainapp/includes/inc__main_menu.html' %}
     <div class="slider-text">
         <p class="slider-trending">НОВИНКИ</p>
         <h2 class="slider-h2">бестселлеры</h2>
@@ -38,14 +38,20 @@
     <div class="left-exclusive">
         <p class="p-exclusive margin-exclusive">бестселлер</p>
         <h3 class="exclusive-h2">Марк Лутц</h3>
-        <p class="exclusive-content margin-exclusive">Изучаем Python. 3-е издание</p> <a href="#"
-                                                                                         class="buttom margin-exclusive">Заказать</a>
+        <p class="exclusive-content margin-exclusive">Изучаем Python. 3-е издание</p>
+        <a href="{% url 'basket:add_book' 1 %}"
+           class="buttom margin-exclusive">
+            Заказать
+        </a>
     </div>
     <div class="right-exclusive">
         <p class="p-exclusive margin-exclusive">бестселлер</p>
         <h3 class="exclusive-h2">Гарри Поттер</h3>
-        <p class="exclusive-content margin-exclusive">Вся серия</p> <a href=""
-                                                                       class="buttom margin-exclusive">Заказать</a>
+        <p class="exclusive-content margin-exclusive">Вся серия</p>
+        <a href="{% url 'basket:add_book' 2 %}"
+           class="buttom margin-exclusive">
+            Заказать
+        </a>
     </div>
 </div>
 <div class="trending  clearfix">
@@ -53,24 +59,30 @@
     <table class="trending-table">
         <tr class="tredding-tr">
             <td class="treding-td">
-                <a href="#" class="treding-a"><img src="{% static 'img/product-11.jpg' %}" alt="foto" class="treding-img"></a>
+                <a href="#" class="treding-a"><img src="{% static 'img/product-11.jpg' %}" alt="foto"
+                                                   class="treding-img"></a>
             </td>
             <td class="treding-td">
-                <a href="#" class="treding-a"><img src="{% static '/img/product-21.jpg' %}" alt="foto" class="treding-img"></a>
+                <a href="#" class="treding-a"><img src="{% static '/img/product-21.jpg' %}" alt="foto"
+                                                   class="treding-img"></a>
             </td>
             <td class="treding-td">
-                <a href="#" class="treding-a"><img src="{% static 'img/product-31.jpg' %}" alt="foto" class="treding-img"></a>
+                <a href="#" class="treding-a"><img src="{% static 'img/product-31.jpg' %}" alt="foto"
+                                                   class="treding-img"></a>
             </td>
         </tr>
         <tr class="tredding-tr">
             <td class="treding-td">
-                <a href="#" class="treding-a"><img src="{% static 'img/product-41.jpg' %}" alt="foto" class="treding-img"></a>
+                <a href="#" class="treding-a"><img src="{% static 'img/product-41.jpg' %}" alt="foto"
+                                                   class="treding-img"></a>
             </td>
             <td class="treding-td">
-                <a href="#" class="treding-a"><img src="{% static 'img/product-5.jpg' %}" alt="foto" class="treding-img"></a>
+                <a href="#" class="treding-a"><img src="{% static 'img/product-5.jpg' %}" alt="foto"
+                                                   class="treding-img"></a>
             </td>
             <td class="treding-td">
-                <a href="#" class="treding-a"><img src="{% static 'img/product-6.jpg' %}" alt="foto" class="treding-img"></a>
+                <a href="#" class="treding-a"><img src="{% static 'img/product-6.jpg' %}" alt="foto"
+                                                   class="treding-img"></a>
             </td>
         </tr>
     </table>

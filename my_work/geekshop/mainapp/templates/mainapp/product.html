@@ -11,57 +11,26 @@
 </div>
 
 <div class="product-block">
+    <div>
+        <h3>
+            Выберете категорию
+        </h3>
+    </div>
     <div class="product-menu">
 
         {% include 'mainapp/includes/inc__catalog_menu.html' %}
 
     </div>
+
     <div class="row product-catalog">
-        <col-4 class="product-catalog-col">
-            <a href="#"><img src="{% static 'img/product-11.jpg' %}" alt="foto"></a>
-        </col-4>
-        <col-4 class="product-catalog-col">
-            <a href="#"><img src="{% static 'img/product-21.jpg' %}" alt="foto"></a>
-        </col-4>
-        <col-4 class="product-catalog-col">
-            <a href="#"><img src="{% static 'img/product-31.jpg' %}" alt="foto"></a>
-        </col-4>
-    </div>
-    <div class="row product-catalog">
-        <col-4 class="product-catalog-col">
-            <a href="#"><img src="{% static 'img/product-41.jpg' %}" alt="foto"></a>
-        </col-4>
-        <col-4 class="product-catalog-col">
-            <a href="#"><img src="{% static 'img/product-5.jpg' %}" alt="foto"></a>
-        </col-4>
-        <col-4 class="product-catalog-col">
-            <a href="#"><img src="{% static 'img/product-6.jpg' %}" alt="foto"></a>
-        </col-4>
-    </div>
-    <div class="row product-catalog">
-        <col-4 class="product-catalog-col">
-            <a href="#"><img src="{% static 'img/product-11.jpg' %}" alt="foto"></a>
-        </col-4>
-        <col-4 class="product-catalog-col">
-            <a href="#"><img src="{% static 'img/product-21.jpg' %}" alt="foto"></a>
-        </col-4>
-        <col-4 class="product-catalog-col">
-            <a href="#"><img src="{% static 'img/product-31.jpg' %}" alt="foto"></a>
-        </col-4>
-    </div>
-    <div class="row product-catalog">
-        <col-4 class="product-catalog-col">
-            <a href="#"><img src="{% static 'img/product-41.jpg' %}" alt="foto"></a>
-        </col-4>
-        <col-4 class="product-catalog-col">
-            <a href="#"><img src="{% static 'img/product-5.jpg' %}" alt="foto"></a>
-        </col-4>
-        <col-4 class="product-catalog-col">
-            <a href="#"><img src="{% static 'img/product-6.jpg' %}" alt="foto"></a>
-        </col-4>
+        {% for item in books %}
+        <a href="#">
+            <img src="/media/{{ item.image }}" alt="foto">
+        </a>
+        {% endfor %}
     </div>
 </div>
-<div class="reset"><img src="{% static 'img/reset.png' %}" alt="icon"></div>
+
 <div class="exclusive clearfix">
     <div class="left-exclusive">
         <p class="p-exclusive margin-exclusive">бестселлер</p>
@@ -75,11 +44,15 @@
     <div class="right-exclusive">
         <p class="p-exclusive margin-exclusive">бестселлер</p>
         <h3 class="exclusive-h2">Гарри Поттер</h3>
-        <p class="exclusive-content margin-exclusive">Вся серия</p> <a href=""
-                                                                       class="buttom margin-exclusive">Заказать</a>
+        <p class="exclusive-content margin-exclusive">Вся серия</p>
+        <a href="{% url 'basket:add_book' 2 %}"
+           class="buttom margin-exclusive">
+            Заказать
+        </a>
     </div>
 </div>
 
 <div class="clr"></div>
 
 {% endblock %}
+

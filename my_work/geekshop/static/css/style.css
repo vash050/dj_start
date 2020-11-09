@@ -856,6 +856,8 @@ a {
 
 .product-a {
     color: #6c6c6c;
+    border: solid 1px;
+}
 }
 
 .product-a:hover {
