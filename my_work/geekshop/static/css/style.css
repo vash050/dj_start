@@ -441,7 +441,7 @@ a {
     height: 683px;
     background-image: url("../img/promo-img1.jpg");
     float: left;
-    margin-top: 120px;
+    /*margin-top: 120px;*/
 }
 
 .right-exclusive {
@@ -449,7 +449,7 @@ a {
     height: 683px;
     background-image: url("../img/promo-img.jpg");
     float: right;
-    margin-top: 120px;
+    /*margin-top: 120px;*/
 }
 
 .p-exclusive {

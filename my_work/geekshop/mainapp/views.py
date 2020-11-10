@@ -11,8 +11,8 @@ def get_catalog_menu():
 
 def index(request):
     links_menu = [
-        {'href': 'main:index', 'name': 'ГЛАВНАЯ'},
-        {'href': 'main:product', 'name': 'КАТАЛОГ'},
+        {'href': 'main:index', 'name': 'главная'},
+        {'href': 'main:product', 'name': 'каталог'},
         {'href': 'main:contact', 'name': 'КОНТАКТЫ'},
     ]
     context = {
@@ -24,9 +24,9 @@ def index(request):
 
 def product(request):
     links_menu = [
-        {'href': 'main:index', 'name': 'ГЛАВНАЯ'},
-        {'href': 'main:product', 'name': 'КАТАЛОГ'},
-        {'href': 'main:contact', 'name': 'КОНТАКТЫ'},
+        {'href': 'main:index', 'name': 'главная'},
+        {'href': 'main:product', 'name': 'каталог'},
+        {'href': 'main:contact', 'name': 'контакты'},
     ]
     context = {
         'page_title': 'каталог',
@@ -38,9 +38,9 @@ def product(request):
 
 def contact(request):
     links_menu = [
-        {'href': 'main:index', 'name': 'ГЛАВНАЯ'},
-        {'href': 'main:product', 'name': 'КАТАЛОГ'},
-        {'href': 'main:contact', 'name': 'КОНТАКТЫ'},
+        {'href': 'main:index', 'name': 'главная'},
+        {'href': 'main:product', 'name': 'каталог'},
+        {'href': 'main:contact', 'name': 'контакты'},
     ]
     locations = [
         {
@@ -72,9 +72,9 @@ def contact(request):
 
 def product_details(request):
     links_menu = [
-        {'href': 'main:index', 'name': 'ГЛАВНАЯ'},
-        {'href': 'main:product', 'name': 'КАТАЛОГ'},
-        {'href': 'main:contact', 'name': 'КОНТАКТЫ'},
+        {'href': 'main:index', 'name': 'главная'},
+        {'href': 'main:product', 'name': 'каталог'},
+        {'href': 'main:contact', 'name': 'контакты'},
     ]
     context = {
         'page_title': 'товар',
@@ -90,9 +90,9 @@ def catalog_page(request, genre_pk):
         books = Book.objects.filter(genre_book_id=genre_pk)
 
     links_menu = [
-        {'href': 'main:index', 'name': 'ГЛАВНАЯ'},
-        {'href': 'main:product', 'name': 'КАТАЛОГ'},
-        {'href': 'main:contact', 'name': 'КОНТАКТЫ'},
+        {'href': 'main:index', 'name': 'главная'},
+        {'href': 'main:product', 'name': 'каталог'},
+        {'href': 'main:contact', 'name': 'контакты'},
     ]
 
     context = {
