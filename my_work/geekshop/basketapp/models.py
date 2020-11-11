@@ -10,3 +10,7 @@ class Basket(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     counter = models.IntegerField('количество', default=0)
     add_datetime = models.DateTimeField('время', auto_now_add=True)
+
+    @property
+    def book_cost(self):
+        return self.book.price * self.counter

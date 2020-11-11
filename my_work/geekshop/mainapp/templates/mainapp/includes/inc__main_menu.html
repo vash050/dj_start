@@ -37,6 +37,7 @@
             <a href="#" class="menu-search"><img src="{% static 'img/search.svg' %}" alt="logo"></a>
             <a href="{% url 'basket:index' %}" class="menu-search">
                 <img src="{% static 'img/basket.png' %}" alt="logo">
+                ({{ user.basket_total_cost|floatformat:0 }} руб) {{ user.basket_total_qty }} шт
             </a>
         </li>
     </ul>
