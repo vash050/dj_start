@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from basketapp.models import Basket
 
@@ -17,16 +17,23 @@ def index(request):
 
 
 @login_required
-def add_book(request, pk_book):
+def add_book(request, book_pk):
     basket_item = request.user.basket.filter(
-        book_id=pk_book
+        book_id=book_pk
     ).first()
     if not basket_item:
         basket_item = Basket.objects.create(
             user=request.user,
-            book_id=pk_book
+            book_id=book_pk
         )
 
     basket_item.counter += 1
     basket_item.save()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required
+def remove_book(request, basket_pk):
+    basket_item = get_object_or_404(Basket, book_id=basket_pk)
+    basket_item.delete()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

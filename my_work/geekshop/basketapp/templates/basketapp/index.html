@@ -11,10 +11,10 @@
                     <span class="product_name">{{ item.book.name }}</span>
                     <span class="product_price">{{ item.book.price }}&nbspруб</span>
                     <input type="number" name="{{ item.pk }}" min="0" max="{{ item.book.quantity }}"
-                           value="{{ item.quantity }}">
-                    <span class="product_cost">{{ item.product_cost }}&nbspруб</span>
+                           value="{{ item.counter }}">
+                    <span class="product_cost">{{ item.book_cost }}&nbspруб</span>
 
-                    <a href="{#% url 'basket:remove' basket_pk=item.pk %#}" class="btn btn-round">
+                    <a href="{% url 'basket:remove_book' item.book.pk %}" class="btn btn-round">
                         удалить
                     </a>
                 </div>
