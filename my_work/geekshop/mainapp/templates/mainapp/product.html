@@ -30,28 +30,35 @@
         {% endfor %}
     </div>
 </div>
-
+{% if request.resolver_match.url_name == 'product' %}
 <div class="exclusive clearfix">
-    <div class="left-exclusive">
-        <p class="p-exclusive margin-exclusive">бестселлер</p>
-        <h3 class="exclusive-h2">Марк Лутц</h3>
-        <p class="exclusive-content margin-exclusive">Изучаем Python. 3-е издание</p>
-        <a href="{% url 'basket:add_book' 1 %}"
-           class="buttom margin-exclusive">
-            Заказать
-        </a>
-    </div>
-    <div class="right-exclusive">
-        <p class="p-exclusive margin-exclusive">бестселлер</p>
-        <h3 class="exclusive-h2">Гарри Поттер</h3>
-        <p class="exclusive-content margin-exclusive">Вся серия</p>
-        <a href="{% url 'basket:add_book' 2 %}"
-           class="buttom margin-exclusive">
-            Заказать
-        </a>
-    </div>
+    <img src="/media/{{ hot_book.image }}">
+    <p class="p-exclusive margin-exclusive">бестселлер</p>
+    <h3 class="exclusive-h2">{{ hot_book.author }}</h3>
+    <p class="exclusive-content margin-exclusive">{{ hot_book.name }}</p>
+    <h3 class="exclusive-h2">{{ hot_book.price }}</h3>
+    <a href="{% url 'basket:add_book' hot_book.id %}"
+       class="buttom margin-exclusive">
+        Заказать
+    </a>
+
 </div>
 
+<div class="trending  clearfix">
+    <h3 class="H3 trending-h3">Похожие</h3> <a href="#" class="explore trending-explore">показать все</a>
+    <table class="trending-table">
+        <tr class="tredding-tr">
+            {% for item in same_books %}
+            <td class="treding-td">
+                <a href="{% url 'main:product_details' item.id %}" class="treding-a"><img src="/media/{{ item.image }}"
+                                                                                          alt="photo"
+                                                                                          class="treding-img"></a>
+            </td>
+            {% endfor %}
+        </tr>
+    </table>
+</div>
+{% endif %}
 <div class="clr"></div>
 
 {% endblock %}

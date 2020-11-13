@@ -1,3 +1,5 @@
+import random
+
 from django.shortcuts import render, get_object_or_404
 
 from mainapp.models import GenreBooks
@@ -7,6 +9,15 @@ from mainapp.models import Book
 
 def get_catalog_menu():
     return GenreBooks.objects.all()
+
+
+def get_hot_book():
+    books = Book.objects.all()
+    return random.choice(books)
+
+
+def get_same_books(book):
+    return Book.objects.filter(genre_book=book.genre_book).exclude(pk=book.pk)
 
 
 def index(request):
@@ -23,6 +34,7 @@ def index(request):
 
 
 def product(request):
+    hot_book = get_hot_book()
     links_menu = [
         {'href': 'main:index', 'name': 'главная'},
         {'href': 'main:product', 'name': 'каталог'},
@@ -30,6 +42,8 @@ def product(request):
     ]
     context = {
         'page_title': 'каталог',
+        'same_books': get_same_books(hot_book),
+        'hot_book': hot_book,
         'links_menu': links_menu,
         'catalog_menu': get_catalog_menu(),
     }
