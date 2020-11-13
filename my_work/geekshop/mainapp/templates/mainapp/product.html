@@ -24,8 +24,8 @@
 
     <div class="row product-catalog">
         {% for item in books %}
-        <a href="#">
-            <img src="/media/{{ item.image }}" alt="foto">
+        <a href="{% url 'main:product_details' item.id %}">
+            <img src="/media/{{ item.image }}" alt="photo">
         </a>
         {% endfor %}
     </div>

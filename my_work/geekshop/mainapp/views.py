@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from mainapp.models import GenreBooks
 
@@ -70,19 +70,6 @@ def contact(request):
     return render(request, 'mainapp/contact.html', context=context)
 
 
-def product_details(request):
-    links_menu = [
-        {'href': 'main:index', 'name': 'главная'},
-        {'href': 'main:product', 'name': 'каталог'},
-        {'href': 'main:contact', 'name': 'контакты'},
-    ]
-    context = {
-        'page_title': 'товар',
-        'links_menu': links_menu,
-    }
-    return render(request, 'mainapp/product_details.html', context=context)
-
-
 def catalog_page(request, genre_pk):
     if genre_pk == 0:
         books = Book.objects.all()
@@ -103,3 +90,22 @@ def catalog_page(request, genre_pk):
         'genre_pk': genre_pk,
     }
     return render(request, 'mainapp/product.html', context=context)
+
+
+def product_details(request, book_pk):
+    item = get_object_or_404(Book, pk=book_pk)
+
+    links_menu = [
+        {'href': 'main:index', 'name': 'главная'},
+        {'href': 'main:product', 'name': 'каталог'},
+        {'href': 'main:contact', 'name': 'контакты'},
+    ]
+
+    context = {
+        'page_title': 'книга',
+        'links_menu': links_menu,
+        'catalog_menu': get_catalog_menu(),
+        'item': item,
+        'book_pk': item.id,
+    }
+    return render(request, 'mainapp/product_details.html', context=context)
