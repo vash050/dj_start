@@ -9,4 +9,5 @@ urlpatterns = [
     path('', basketapp.index, name='index'),
     path('add_book/<int:book_pk>/', basketapp.add_book, name='add_book'),
     path('remove_book/<int:basket_pk>/', basketapp.remove_book, name='remove_book'),
+    path('update_book/<int:basket_pk>/<int:qty>/', basketapp.update_book),
 ]

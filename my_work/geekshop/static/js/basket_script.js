@@ -11,6 +11,13 @@ window.onload = function () {
        let qty = event.target.value
        let pk = event.target.name
        console.log("qty:", qty, ", pk" , pk);
+       $.ajax({
+            url:"/basket/update_book/" + pk + "/" + qty + "/",
+            success: function (answer) {
+                console.log("answer", answer);
+                document.querySelector('.basket_list').innerHTML = answer.basket_list;
+            }
+       });
        }
     })
 }
