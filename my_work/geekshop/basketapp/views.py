@@ -52,7 +52,7 @@ def update_book(request, basket_pk, qty):
         if qty <= 0:
             basket_item.delete()
         else:
-            basket_item.counter += qty
+            basket_item.counter = qty
             basket_item.save()
 
         basket = request.user.basket.all()
