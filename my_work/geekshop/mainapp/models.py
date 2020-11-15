@@ -4,6 +4,7 @@ from django.db import models
 class GenreBooks(models.Model):
     genre = models.CharField('жанр книги', max_length=64)
     description = models.TextField('Описание жанра', blank=True)
+    is_active = models.BooleanField('активность', default=True)
 
     class Meta:
         verbose_name = 'жанр книг'
@@ -24,6 +25,7 @@ class Book(models.Model):
     price = models.DecimalField('цена', max_digits=7, decimal_places=2, default=0)
     count_page = models.PositiveSmallIntegerField('количество страниц', default=0)
     quantity = models.PositiveIntegerField('количество на складе', default=0)
+    is_active = models.BooleanField('активность', default=True)
 
     class Meta:
         verbose_name = 'книга'

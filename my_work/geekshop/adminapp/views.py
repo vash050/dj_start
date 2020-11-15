@@ -6,6 +6,8 @@ from django.urls import reverse
 
 from adminapp.forms import AdminShopUserUpdateForm
 
+from mainapp.models import GenreBooks
+
 
 @user_passes_test(lambda x: x.is_superuser)
 def index(request):
@@ -49,3 +51,13 @@ def user_update(request, user_pk):
         'form': user_form
     }
     return render(request, 'myadminapp/user_update.html', context=context)
+
+
+@user_passes_test(lambda x: x.is_superuser)
+def categories(request):
+    items = GenreBooks.objects.all()
+    context = {
+        'page_title': 'админка/категории',
+        'object_list': items,
+    }
+    return render(request, 'myadminapp/categories.html', context=context)
