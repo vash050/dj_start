@@ -15,7 +15,6 @@
         </li>
         {% endfor %}
 
-
         {% if user.is_authenticated %}
         <li class="menu-list">
             <a href="{% url 'auth:update' %}" class="menu-link">
@@ -23,6 +22,15 @@
             </a>
         </li>
         {% endif %}
+
+        {% if user.is_superuser %}
+        <li class="menu-list">
+            <a href="{% url 'myadmin:index' %}" class="menu-link">
+                админка
+            </a>
+        </li>
+        {% endif %}
+
         <li class="menu-list">
             {% if user.is_authenticated %}
 
@@ -32,6 +40,7 @@
 
             {% endif %}
         </li>
+
 
         <li class="menu-list">
             <a href="#" class="menu-search"><img src="{% static 'img/search.svg' %}" alt="logo"></a>
