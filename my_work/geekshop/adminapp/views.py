@@ -4,9 +4,26 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 
-from adminapp.forms import AdminShopUserUpdateForm
+from adminapp.forms import AdminShopUserCreateForm, AdminShopUserUpdateForm
 
 from mainapp.models import GenreBooks
+
+
+@user_passes_test(lambda x: x.is_superuser)
+def user_create(request):
+    if request.method == 'POST':
+        user_form = AdminShopUserCreateForm(request.POST, request.FILES)
+        if user_form.is_valid():
+            user_form.save()
+            return HttpResponseRedirect(reverse('adminapp:index'))
+    else:
+        user_form = AdminShopUserCreateForm()
+
+    context = {
+        'page_title': 'админка/пользователи/создание',
+        'form': user_form
+    }
+    return render(request, 'adminapp/user_update.html', context=context)
 
 
 @user_passes_test(lambda x: x.is_superuser)
@@ -17,6 +34,24 @@ def index(request):
         'object_list': users,
     }
     return render(request, 'adminapp/index.html', context=context)
+
+
+@user_passes_test(lambda x: x.is_superuser)
+def user_update(request, user_pk):
+    user = get_object_or_404(get_user_model(), pk=user_pk)
+    if request.method == 'POST':
+        user_form = AdminShopUserUpdateForm(request.POST, request.FILES, instance=user)
+        if user_form.is_valid():
+            user_form.save()
+            return HttpResponseRedirect(reverse('adminapp:index'))
+    else:
+        user_form = AdminShopUserUpdateForm(instance=user)
+
+    context = {
+        'page_title': 'админка/пользователи/редактирование',
+        'form': user_form
+    }
+    return render(request, 'adminapp/user_update.html', context=context)
 
 
 @user_passes_test(lambda x: x.is_superuser)
@@ -33,27 +68,6 @@ def user_delete(request, user_pk):
         'object': user
     }
     return render(request, 'adminapp/user_delete.html', context=context)
-
-
-@user_passes_test(lambda x: x.is_superuser)
-def user_update(request, user_pk):
-    user = get_object_or_404(get_user_model(), pk=user_pk)
-    if request.method == 'POST':
-        print(user)
-        user_form = AdminShopUserUpdateForm(request.POST, request.FILES, instance=user)
-        if user_form.is_valid():
-            user_form.save()
-            return HttpResponseRedirect(reverse('adminapp:index'))
-    else:
-        print(user)
-        user_form = AdminShopUserUpdateForm(request.POST, request.FILES, instance=user)
-        print(user_form)
-
-    context = {
-        'page_title': 'админка/пользователи/редактирование',
-        'form': user_form
-    }
-    return render(request, 'adminapp/user_update.html', context=context)
 
 
 @user_passes_test(lambda x: x.is_superuser)
