@@ -21,14 +21,12 @@
         </div>
         <div class="user_name">
             <p><strong>{{ shop_user.username }}</strong></p>
-            <p>
                 {% if shop_user.first_name %}
                 <b>{{ shop_user.first_name|title }}</b>
                 {% if shop_user.last_name %}
             <p>{{ shop_user.last_name|title }}</p>
             {% endif %}
             {% endif %}
-            </p>
         </div>
         <div class="user_age">
             age:<br>
