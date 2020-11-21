@@ -2,7 +2,7 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.forms import forms, HiddenInput, ModelForm
 
-from mainapp.models import GenreBooks
+from mainapp.models import GenreBooks, Book
 
 
 class AgeValidationMixin:
@@ -52,3 +52,16 @@ class AdminProductCategoryUpdateForm(ModelForm):
         super().__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = f'form-control {field_name}'
+
+
+class AdminProductUpdateForm(ModelForm):
+    class Meta:
+        model = Book
+        fields = '__all__'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = f'form-control {field_name}'
+            if field_name == 'category':
+                field.widget = HiddenInput()
