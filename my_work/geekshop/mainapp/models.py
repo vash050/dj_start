@@ -14,6 +14,11 @@ class GenreBooks(models.Model):
     def __str__(self):
         return f'{self.genre}'
 
+    def delete(self, using=None, keep_parents=False):
+        self.is_active = False
+        self.save()
+        return 1, {}
+
 
 class Book(models.Model):
     genre_book = models.ForeignKey(GenreBooks, on_delete=models.CASCADE)

@@ -1,6 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-from django.forms import forms, HiddenInput
+from django.forms import forms, HiddenInput, ModelForm
+
+from mainapp.models import GenreBooks
 
 
 class AgeValidationMixin:
@@ -39,3 +41,14 @@ class AdminShopUserUpdateForm(UserChangeForm, AgeValidationMixin):
             field.help_text = ''
             if field_name == 'password':
                 field.widget = HiddenInput()
+
+
+class AdminProductCategoryUpdateForm(ModelForm):
+    class Meta:
+        model = GenreBooks
+        fields = '__all__'
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = f'form-control {field_name}'

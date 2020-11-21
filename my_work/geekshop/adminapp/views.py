@@ -10,6 +10,8 @@ from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
 from mainapp.models import GenreBooks
 
+from adminapp.forms import AdminProductCategoryUpdateForm
+
 
 class SuperUserOnlyMixin:
     @method_decorator(user_passes_test(lambda x: x.is_superuser))
@@ -75,9 +77,6 @@ class ShopUserDeleteView(SuperUserOnlyMixin, SetPageTitleMixin, DeleteView):
     success_url = reverse_lazy('adminapp:index')
     page_title = 'админка/пользователи/удаление'
 
-
-
-
 # @user_passes_test(lambda x: x.is_superuser)
 # def user_update(request, user_pk):
 #     user = get_object_or_404(get_user_model(), pk=user_pk)
@@ -120,3 +119,23 @@ def categories(request):
         'object_list': items,
     }
     return render(request, 'adminapp/categories.html', context=context)
+
+
+class GenreBooksCreateView(SuperUserOnlyMixin, SetPageTitleMixin, CreateView):
+    model = GenreBooks
+    form_class = AdminProductCategoryUpdateForm
+    success_url = reverse_lazy('adminapp:categories')
+    page_title = 'админка/категории/создание'
+
+
+class GenreBooksUpdateView(SuperUserOnlyMixin, SetPageTitleMixin, UpdateView):
+    model = GenreBooks
+    form_class = AdminProductCategoryUpdateForm
+    success_url = reverse_lazy('adminapp:categories')
+    page_title = 'админка/категории/редактирование'
+
+
+class GenreBooksDeleteView(SuperUserOnlyMixin, SetPageTitleMixin, DeleteView):
+    model = GenreBooks
+    success_url = reverse_lazy('adminapp:categories')
+    page_title = 'админка/пользователи/удаление'
