@@ -5,10 +5,25 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse, reverse_lazy
 
 from adminapp.forms import AdminShopUserCreateForm, AdminShopUserUpdateForm
+from django.utils.decorators import method_decorator
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 
 from mainapp.models import GenreBooks
 
+
+class SuperUserOnlyMixin:
+    @method_decorator(user_passes_test(lambda x: x.is_superuser))
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
+
+
+class SetPageTitleMixin:
+    page_title = ''
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(object_list=None, **kwargs)
+        context['page_title'] = self.page_title
+        return context
 
 # @user_passes_test(lambda x: x.is_superuser)
 # def user_create(request):
@@ -36,32 +51,31 @@ from mainapp.models import GenreBooks
 #     }
 #     return render(request, 'adminapp/index.html', context=context)
 
-class ShopUserList(ListView):
+class ShopUserList(SuperUserOnlyMixin, SetPageTitleMixin, ListView):
     model = get_user_model()
+    page_title = 'админка/пользователи'
 
 
-class ShopUseCreateView(CreateView):
+class ShopUseCreateView(SuperUserOnlyMixin, SetPageTitleMixin, CreateView):
     model = get_user_model()
     form_class = AdminShopUserCreateForm
     success_url = reverse_lazy('adminapp:index')
+    page_title = 'админка/пользователи/создание'
 
 
-class ShopUserUpdateView(UpdateView):
+class ShopUserUpdateView(SuperUserOnlyMixin, SetPageTitleMixin, UpdateView):
     model = get_user_model()
     form_class = AdminShopUserUpdateForm
     success_url = reverse_lazy('adminapp:index')
+    page_title = 'админка/пользователи/редактирование'
 
 
-class ShopUserDeleteView(DeleteView):
+class ShopUserDeleteView(SuperUserOnlyMixin, SetPageTitleMixin, DeleteView):
     model = get_user_model()
     success_url = reverse_lazy('adminapp:index')
+    page_title = 'админка/пользователи/удаление'
 
-    def delete(self, request, *args, **kwargs):
-        self.object = self.get_object()
-        success_url = self.get_success_url()
-        self.object.is_active = False
-        self.object.save()
-        return HttpResponseRedirect(success_url)
+
 
 
 # @user_passes_test(lambda x: x.is_superuser)
