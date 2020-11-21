@@ -118,7 +118,7 @@ def categories(request):
         'page_title': 'админка/категории',
         'object_list': items,
     }
-    return render(request, 'adminapp/categories.html', context=context)
+    return render(request, 'adminapp/categories_list.html', context=context)
 
 
 class GenreBooksCreateView(SuperUserOnlyMixin, SetPageTitleMixin, CreateView):
@@ -139,3 +139,15 @@ class GenreBooksDeleteView(SuperUserOnlyMixin, SetPageTitleMixin, DeleteView):
     model = GenreBooks
     success_url = reverse_lazy('adminapp:categories')
     page_title = 'админка/пользователи/удаление'
+
+
+@user_passes_test(lambda x: x.is_superuser)
+def category_products(request, pk):
+    category = get_object_or_404(GenreBooks, pk=pk)
+    object_list = category.book_set.all()
+    context = {
+        'page_title': f'категория {category.genre}/книги',
+        'category': category,
+        'object_list': object_list
+    }
+    return render(request, 'adminapp/categories_list.html', context)

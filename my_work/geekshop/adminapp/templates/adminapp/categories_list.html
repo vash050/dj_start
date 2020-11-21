@@ -1,0 +1,34 @@
+{% extends 'adminapp/base.html' %}
+{% load static %}
+
+{% block container %}
+    <div class="users_list">
+        <a href="{% url 'adminapp:categories_create' %}" class="btn btn-primary new_user">
+            новая категория
+        </a>
+        {% for category in object_list %}
+            <div class="category_record {% if not category.is_active %}not_active{% endif %}">
+                <div class="category_name">
+                    {{ object.name|title }}
+                </div>
+                <div class="category_actions">
+                     <a href="{% url 'adminapp:category_products' category.pk %}" class="btn btn-primary">
+                        товары жанра
+                    </a>
+                </div>
+                    <a href="{% url 'adminapp:categories_update' category.pk %}" class="btn btn-primary">
+                        редактировать
+                    </a>
+                    <a href="{% url 'adminapp:categories_delete' category.pk %}" class="btn btn-danger">
+                        удалить
+                    </a>
+                </div>
+                <div class="user_name">
+                    <p><strong>{{ category.name }}</strong></p>
+                </div>
+                <div>
+                    {{ category.description }}
+                </div>
+            </div>
+        {% endfor %}
+{% endblock %}

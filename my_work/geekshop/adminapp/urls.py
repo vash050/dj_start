@@ -13,5 +13,6 @@ urlpatterns = [
     path('categories/', adminapp.categories, name='categories'),
     path('categories/create/', adminapp.GenreBooksCreateView.as_view(), name='categories_create'),
     path('categories/update/<int:pk>/', adminapp.GenreBooksUpdateView.as_view(), name='categories_update'),
-path('categories/delete/<int:pk>/', adminapp.GenreBooksDeleteView.as_view(), name='categories_delete'),
+    path('categories/delete/<int:pk>/', adminapp.GenreBooksDeleteView.as_view(), name='categories_delete'),
+    path('categories/<int:pk>/products/', adminapp.category_products, name='category_products'),
 ]
