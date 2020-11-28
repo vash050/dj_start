@@ -1,5 +1,6 @@
 import random
 
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.shortcuts import render, get_object_or_404
 
 from mainapp.models import GenreBooks
@@ -84,11 +85,19 @@ def contact(request):
     return render(request, 'mainapp/contact.html', context=context)
 
 
-def catalog_page(request, genre_pk):
+def catalog_page(request, genre_pk, page_num=1):
     if genre_pk == 0:
         books = Book.objects.all()
     else:
         books = Book.objects.filter(genre_book_id=genre_pk)
+
+    products_paginator = Paginator(books, 2)
+    try:
+        books = products_paginator.page(page_num)
+    except PageNotAnInteger:
+        books = products_paginator.page(1)
+    except EmptyPage:
+        books = products_paginator.page(products_paginator.num_pages)
 
     links_menu = [
         {'href': 'main:index', 'name': 'главная'},

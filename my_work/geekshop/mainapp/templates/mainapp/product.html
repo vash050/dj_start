@@ -22,6 +22,24 @@
 
     </div>
 
+    <div>
+        <h3>книги</h3>
+        <div class="paginator">
+            {% if books.has_previous %}
+            <a href="{% url 'main:catalog_page_pages' genre_pk books.previous_page_number %}">
+                <
+            </a>
+            {% endif %}
+            <span class="current">страница {{ books.number }} из {{ books.paginator.num_pages }}</span>
+            {% if books.has_next %}
+            <a href="{% url 'main:catalog_page_pages' genre_pk books.next_page_number %}">
+                >
+            </a>
+            {% endif %}
+        </div>
+
+    </div>
+
     <div class="row product-catalog">
         {% for item in books %}
         <a href="{% url 'main:product_details' item.id %}">
