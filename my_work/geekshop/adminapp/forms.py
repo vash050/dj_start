@@ -63,5 +63,5 @@ class AdminProductUpdateForm(ModelForm):
         super().__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = f'form-control {field_name}'
-            if field_name == 'category':
+            if field_name == 'genre_book':
                 field.widget = HiddenInput()

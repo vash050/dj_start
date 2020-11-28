@@ -169,7 +169,7 @@ def product_create(request, pk):
     else:
         form = AdminProductUpdateForm(
             initial={
-                'category': category,
+                'genre_book': category,
             }
         )
     context = {
