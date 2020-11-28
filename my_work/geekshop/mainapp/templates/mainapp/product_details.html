@@ -1,6 +1,7 @@
 {% extends 'mainapp/base.html' %}
 {% load static %}
 {% block conteiner %}
+{% load my_tags %}
 
 <div class="slider-contact padding-site clearfix">
 
@@ -24,19 +25,19 @@
     <div class="row product-catalog">
         {% for item in books %}
         <a href="#">
-            <img src="/media/{{ item.image }}" alt="foto">
+            <img src="{{ item.image|media_folder_books }}" alt="foto">
         </a>
         {% endfor %}
     </div>
 </div>
 <div class="row details-row">
     <div class="col-6 details-left">
-        <div class="main-foto"><img src="/media/{{ item.image }}" alt="photo"></div>
+        <div class="main-foto"><img src="{{ item.image|media_folder_books }}" alt="photo"></div>
         <div class="color-foto">
-            <div class="color-foto-1 color-foto-left"><a href="#"><img src="/media/{{ item.image }}" alt="photo"></a>
+            <div class="color-foto-1 color-foto-left"><a href="#"><img src="{{ item.image|media_folder_books }}" alt="photo"></a>
             </div>
-            <div class="color-foto-1"><a href="#"><img src="/media/{{ item.image }}" alt="photo"></a></div>
-            <div class="color-foto-1"><a href="#"><img src="/media/{{ item.image }}" alt="photo"></a></div>
+            <div class="color-foto-1"><a href="#"><img src="{{ item.image|media_folder_books }}" alt="photo"></a></div>
+            <div class="color-foto-1"><a href="#"><img src="{{ item.image|media_folder_books }}" alt="photo"></a></div>
         </div>
     </div>
     <div class="col-6 details-rigth">

@@ -1,5 +1,6 @@
 {% extends 'mainapp/base.html' %}
 {% load static %}
+{% load my_tags %}
 
 {% block conteiner %}
 
@@ -43,14 +44,14 @@
     <div class="row product-catalog">
         {% for item in books %}
         <a href="{% url 'main:product_details' item.id %}">
-            <img src="/media/{{ item.image }}" alt="photo">
+            <img src="{{ item.image|media_folder_books }}" alt="photo">
         </a>
         {% endfor %}
     </div>
 </div>
 {% if request.resolver_match.url_name == 'product' %}
 <div class="exclusive clearfix">
-    <img src="/media/{{ hot_book.image }}">
+    <img src="{{ hot_book.image|media_folder_users }}">
     <p class="p-exclusive margin-exclusive">бестселлер</p>
     <h3 class="exclusive-h2">{{ hot_book.author }}</h3>
     <p class="exclusive-content margin-exclusive">{{ hot_book.name }}</p>
@@ -68,7 +69,7 @@
         <tr class="tredding-tr">
             {% for item in same_books %}
             <td class="treding-td">
-                <a href="{% url 'main:product_details' item.id %}" class="treding-a"><img src="/media/{{ item.image }}"
+                <a href="{% url 'main:product_details' item.id %}" class="treding-a"><img src="{{ item.image|media_folder_books }}"
                                                                                           alt="photo"
                                                                                           class="treding-img"></a>
             </td>

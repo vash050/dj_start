@@ -28,3 +28,15 @@ def media_folder_users(string):
 
 
 register.filter('media_folder_products', media_folder_products)
+
+
+@register.filter(name='media_folder_books')
+def media_folder_books(string):
+    """
+    Автоматически добавляет относительный URL-путь к медиафайлам товара
+    """
+    if not string:
+        string = 'avatars/default_book.jpg'
+
+    return f'{settings.MEDIA_URL}{string}'
+
